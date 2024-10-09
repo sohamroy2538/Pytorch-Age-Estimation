@@ -111,7 +111,7 @@ class AgeEstimator():
             label += f": {ages[i].item()}years old"
             self.plot_box_and_label(ndarray_image, thickness, box, label, color = (255, 0, 0))
             
-        return ndarray_image
+        return 'Man' if genders[i] == 0 else "Woman" , ages[0].item()
 
 def main(image_path, weights = "weights/weights.pt", face_size = 64, device = 'cpu', save_result = False, imshow = False):
     print(image_path, weights)
